@@ -1,0 +1,14 @@
+# Secrets - never commit these
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs and generated reports
+logs/*.log
+logs/*.txt
+logs/*.db
+
+# OS noise
+.DS_Store

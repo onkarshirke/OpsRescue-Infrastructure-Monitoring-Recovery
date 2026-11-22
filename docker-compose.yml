@@ -1,0 +1,22 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: infrawatch-web
+    ports:
+      - "8080:80"
+    restart: "no"
+
+  db:
+    image: postgres:16
+    container_name: infrawatch-db
+    environment:
+      POSTGRES_USER: infrawatch
+      POSTGRES_PASSWORD: infrawatch_pass
+      POSTGRES_DB: infrawatch
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
